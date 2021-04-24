@@ -17,3 +17,11 @@ plt.title("Pearson correlation")
 plt.savefig("corr_matrix.png")
 plt.show()
 
+print(data.columns)
+#dist plot
+for i in data.columns:
+
+    plt.hist(data[str(i)], density=2,alpha=0.50)
+#sns.displot(data, x="lucro_liquido", bins=20)
+    plt.show()
+
