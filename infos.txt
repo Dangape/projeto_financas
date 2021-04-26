@@ -1,0 +1,35 @@
+
+ativo total = 1
+ativo financeiro = 1.01.02 + 1.02.01.01
+ativo operacional = ativo total-ativo financeiro
+passivo = 2 - 2.03 *?
+passivo financeiro = 2.01.04 + 2.02.01
+passivo operacional = passivo - passivo financeiro
+ativo operacional liquido = ativo operacional - passivo operacional
+passivo financeiro liquido = ativo financeiro - passivo financeiro
+patrimonio liquido = 2.03
+resultado operacional liquido (ROL) = (3.11 - 3.06) + proteção fiscal
+ROL continuado = 3.09 - 3.06
+resultado financeiro = 3.06
+proteção fiscal = resultado financeiro *0.34 (essa aliquota muda todo ano?)
+resultado financeiro liquido = resultado financeiro - proteção fiscal
+resultado abrangente = 2.03.08 - 2.03.08 *?
+lucro liquido = 3.11
+lucro abrangente = resultado abrangente + lucro liquido
+-----------DFC-------------
+FCO = 6.01
+fluxo de caixa investimentos = 6.02
+fluxo de caixa financeiro = 6.03
+------------Balanço----------
+ativo circulante = 1.01
+passivo circulante = 2.01
+------------DRE--------------
+Receita de vendas = 3.01
+
+reultado/receita/despesa - DRE
+ativo - BPA
+passivo - BPP
+W,X,Y - DFCMI
+
+dividir por 10bi
+separar consolidado de individual
