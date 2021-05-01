@@ -18,12 +18,13 @@ data = pd.read_csv("Data/dfp_cia_aberta_BPA_con_2010.csv",sep=";",engine="python
 
 data.columns = data.columns.str.lower() #lowcase all headers
 data['dt_fim_exerc']=pd.to_datetime(data['dt_fim_exerc'], format='%Y-%m-%d') #extract year
-data = data.drop(columns = ["cnpj_cia","dt_refer","denom_cia","grupo_dfp","moeda","escala_moeda","ordem_exerc",
-                            "versao","st_conta_fixa","ds_conta"])#remove extra columns
+
 data["year"] = data["dt_fim_exerc"].dt.year
 data = data[data["year"]==2010] #remove year 2009
 data["month"] = data["dt_fim_exerc"].dt.month
 data = data[data["month"]==12]
+data = data.drop(columns = ["cnpj_cia","dt_refer","denom_cia","grupo_dfp","moeda","escala_moeda","ordem_exerc",
+                            "versao","st_conta_fixa","ds_conta","dt_fim_exerc","month"])#remove extra columns
 print(data)
 
 #Checking data types and converting them
@@ -55,7 +56,7 @@ for cvm in tqdm(unique_cvm):
             #print("ja tem a conta",account,"na empresa",cvm)
             pass
         elif account not in data[(data["cd_cvm"]==str(cvm))].values:
-            new_row = {'cd_cvm': str(cvm), 'dt_fim_exerc': int(2010), 'cd_conta': str(account), 'vl_conta': float(0)}
+            new_row = {'cd_cvm': str(cvm), 'year': int(2010), 'cd_conta': str(account), 'vl_conta': float(0)}
             data = data.append(new_row,ignore_index=True)
             #print("linha adicionada, conta:",account,"na empresa",cvm)
 

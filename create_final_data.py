@@ -24,17 +24,20 @@ second = data[data["cd_conta"]=="1.01.02"]
 second = second.sort_values(by=["cd_cvm"])
 second = second.reset_index(drop=True)
 print(second.duplicated(subset=['cd_cvm']).any())
-#contas["ativo_financeiro"] = second["vl_conta"].values + first["vl_conta"].values
-print(len(first.cd_cvm.unique()))
-print(len(second.cd_cvm.unique()))
-print(second)
-print(first)
-for i in first.cd_cvm.values:
-    if i in second.cd_cvm.values:
-        #print(i,"ta aqui")
-        pass
-    else:
-        print(i,"faltando!!!!!!!!!")
+
+
+contas["ativo_financeiro"] = second["vl_conta"].values + first["vl_conta"].values
+print(contas)
+# print(len(first.cd_cvm.unique()))
+# print(len(second.cd_cvm.unique()))
+# print(second)
+# print(first)
+# for i in first.cd_cvm.values:
+#     if i in second.cd_cvm.values:
+#         #print(i,"ta aqui")
+#         pass
+#     else:
+#         print(i,"faltando!!!!!!!!!")
 # final = pd.DataFrame({"cd_cvm":ativo_total["cd_cvm"],"dt_fim_exerc":ativo_total["dt_fim_exerc"],"ativo_total":ativo_total["vl_conta"],
 #                       "ativo_financeiro":})
 # final = final.sort_values(by=["cd_cvm"])
