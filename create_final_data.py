@@ -36,4 +36,7 @@ final = final.sort_values(by=["cd_cvm"])
 final = final.reset_index(drop=True)
 print(final)
 
+#salva em arquivo csv
+final.to_csv("final.csv", index=False)
+
 
