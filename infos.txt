@@ -1,10 +1,12 @@
-
-ativo total = 1
+-------BPA------------
+ativo total = 1 
 ativo financeiro = 1.01.02 + 1.02.01.01
 ativo operacional = ativo total-ativo financeiro
+-------BPP------------
 passivo = 2 - 2.03 *?
 passivo financeiro = 2.01.04 + 2.02.01
 passivo operacional = passivo - passivo financeiro
+
 ativo operacional liquido = ativo operacional - passivo operacional
 passivo financeiro liquido = ativo financeiro - passivo financeiro
 patrimonio liquido = 2.03
