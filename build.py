@@ -15,7 +15,6 @@ file = prefix + filename + type + year + extention
 
 data = pd.read_csv("Data/dfp_cia_aberta_BPA_con_2010.csv",sep=";",engine="python",converters={"VL_CONTA":str})
 
-
 data.columns = data.columns.str.lower() #lowcase all headers
 data['dt_fim_exerc']=pd.to_datetime(data['dt_fim_exerc'], format='%Y-%m-%d') #extract year
 
@@ -44,11 +43,8 @@ print(final)
 unique_cvm = data.cd_cvm.unique()
 unique_account = data.cd_conta.unique()
 
-#
 print(len(unique_cvm))
 print(len(unique_account))
-
-
 
 for cvm in tqdm(unique_cvm):
     for account in unique_account:
