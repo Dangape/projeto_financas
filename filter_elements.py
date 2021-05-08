@@ -5,9 +5,10 @@ from tqdm import tqdm
 
 #paths
 prefix = "Data/dfp_cia_aberta"
-#years = ["_2010","_2011","_2012","_2013","_2014","_2015","_2016","_2017","_2018","_2019","_2020"]
-years = ["_2018"]
-filename = ["_BPP","_DFC_MI","_DRE"]
+# years = ["_2010","_2011","_2012","_2013","_2014","_2015","_2016","_2017","_2018","_2019","_2020"]
+years = ["_2019","_2020"]
+# filename = ["_BPA","_BPP","_DFC_MI","_DRE"]
+filename = ["_BPP"]
 type = "_con"
 extention = ".csv"
 
