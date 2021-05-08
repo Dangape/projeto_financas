@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 
 #load data
-data = pd.read_pickle("corrected_accounts.pkl")
+data = pd.read_pickle("corrected_files/corrected_accounts_BPA_2010.pkl")
 
 #Calculo ativo_total (conta 1)
 ativo_total = data[data["cd_conta"]=="1"]
