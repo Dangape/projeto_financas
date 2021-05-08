@@ -6,9 +6,8 @@ from tqdm import tqdm
 #paths
 prefix = "Data/dfp_cia_aberta"
 #years = ["_2010","_2011","_2012","_2013","_2014","_2015","_2016","_2017","_2018","_2019","_2020"]
-years = ["_2020"]
-#filename = ["_BPA","_BPP","_DFC_MI","_DRE"]
-filename = ["_BPA"]
+years = ["_2018"]
+filename = ["_BPP","_DFC_MI","_DRE"]
 type = "_con"
 extention = ".csv"
 
@@ -17,11 +16,11 @@ for year in years:
     for x in tqdm(filename):
         file = prefix + x + type + year + extention
 
-        data = pd.read_csv(str(file),sep=";",engine="python",converters={"VL_CONTA":str})
+        data = pd.read_csv(str(file),sep=";",engine="python",converters={"VL_CONTA":str}, quotechar='"', error_bad_lines=False)
         print(data)
 
         data.columns = data.columns.str.lower() #lowcase all headers
-        data['dt_fim_exerc']=pd.to_datetime(data['dt_fim_exerc'], format='%Y-%m-%d') #extract year
+        data['dt_fim_exerc']=pd.to_datetime(data['dt_fim_exerc']) #extract year
 
         data["year"] = data["dt_fim_exerc"].dt.year
         data = data[data["year"]==int(year.replace("_",""))] #remove ano anterior ao de analise
@@ -35,8 +34,8 @@ for year in years:
         # print(data.dtypes)
         data["cd_cvm"] = data['cd_cvm'].astype(str)
         data["cd_conta"] = data["cd_conta"].astype(str)
-        data["vl_conta"] = data.vl_conta.astype(float) #mesma coisa que dividir por 10bi?
-
+        data["vl_conta"] = data["vl_conta"].apply(lambda x: x.replace(".","")) #remove points
+        data["vl_conta"] = data["vl_conta"].astype(float) #mesma coisa que dividir por 10bi?
         # print(data.dtypes)
 
         # final = data[data["cd_cvm"]=="1023"] #ativo total
