@@ -29,14 +29,19 @@ print("Ativo financeiro:",ativo_financeiro)
 ativo_operacional  = ativo_total["vl_conta"] - ativo_financeiro #ativo total - ativo financeiro
 print("Ativo operacional:",ativo_operacional)
 
+#calculo ativo circulante
+ativo_circulante = data[data["cd_conta"] == "1.01"]["vl_conta"]
+print("ativo circulante:",ativo_circulante)
+
 #Data frame final
 final = pd.DataFrame({"cd_cvm":ativo_total["cd_cvm"],"dt_fim_exerc":ativo_total["year"],"ativo_total":ativo_total["vl_conta"],
-                      "ativo_financeiro": ativo_financeiro,"ativo_operacional":ativo_operacional}) #criar dataframe final
+                      "ativo_financeiro": ativo_financeiro,"ativo_operacional":ativo_operacional,"ativo_circulante":ativo_circulante.values}) #criar dataframe final
 final = final.sort_values(by=["cd_cvm"])
 final = final.reset_index(drop=True)
 print(final)
 
 #salva em arquivo csv
-final.to_csv("final.csv", index=False)
-
+final.to_csv("final_2010.csv", index=False)
+# def returnNotMatches(a, b):
+#     return [[x for x in a if x not in b], [x for x in b if x not in a]]
 
