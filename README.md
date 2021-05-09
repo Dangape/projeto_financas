@@ -38,5 +38,5 @@ Receita de vendas = 3.01\
 resultado operacional liquido (ROL) = (3.11 - 3.06) + proteção fiscal\
 ROL continuado = 3.09 - 3.06 + proteção fiscal\
 resultado financeiro = 3.06\
-proteção fiscal = resultado financeiro * 0.34 (essa aliquota muda todo ano?)\
+proteção fiscal = resultado financeiro * 0.34\
 lucro liquido = 3.11
