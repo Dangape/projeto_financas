@@ -6,8 +6,7 @@ Este é um projeto em andamento e ainda não está pronto para publicação ou a
 Caso queira ter acesso a base de dados utilizada, acesse este [link](http://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/), onde irá encontrar dados acerca de demonstrativos financeiros de algumas empresas brasileiras.
 
 # Arquivos
-O arquivo `corrigindo_contas.py` lê todos os dados baixados do site da CVM e verificar se cada empresa possui todas as contas necessárias. Caso não possua\
-o código cria a conta com valor zero
+O arquivo `corrigindo_contas.py` lê todos os dados baixados do site da CVM e verificar se cada empresa possui todas as contas necessárias. Caso não possua, o código cria a conta com valor zero
 
 O arquvivo `data_final.py` utiliza os dados corrigidos anteriormente, e o dicionário descrito para criar os elementos necessários non dataframe final.
 
