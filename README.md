@@ -11,7 +11,7 @@ o código cria a conta com valor zero
 
 O arquvivo `data_final.py` utiliza os dados corrigidos anteriormente, e o dicionário descrito para criar os elementos necessários non dataframe final.
 
-Para conseguir ler os arquivos de contas corrigidas é necessário usar a função `pd.read_puckle`, presente no pacote `pandas` 
+Para conseguir ler os arquivos de contas corrigidas é necessário usar a função `pd.read_pickle`, presente no pacote `pandas` 
 
 A pasta `corrected_files` possui todos os arquivos corrigidos em formato `.pkl`
 
