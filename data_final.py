@@ -55,7 +55,7 @@ for year in tqdm(years):
     passivo_financeiro = data_BPP[data_BPP["cd_conta"]=="2.01.04"]["vl_conta"].values - data_BPP[data_BPP["cd_conta"]=="2.02.01"]["vl_conta"].values
 
     #passivo operacional
-    passivo_operacional = passivo - passivo_financeiro #arrumar valores negativos
+    passivo_operacional = passivo - abs(passivo_financeiro) #arrumar valores negativos
 
     #patrimonio liquido
     patrimonio_liquido = data_BPP[data_BPP["cd_conta"]=="2.03"]["vl_conta"].values
