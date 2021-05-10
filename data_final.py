@@ -91,8 +91,6 @@ fco_invest = data_DFCMI[data_DFCMI["cd_conta"]=="6.02"]["vl_conta"].values
 #fluxo de caixa financeiro
 fco_financeiro = data_DFCMI[data_DFCMI["cd_conta"]=="6.03"]["vl_conta"].values
 
-################################RESULTADOS####################################################
-
 ################################FINAL####################################################
 
 #Data frame final
@@ -101,7 +99,7 @@ final = pd.DataFrame({"cd_cvm":ativo_total["cd_cvm"],"dt_fim_exerc":ativo_total[
                       "passivo":passivo,"passivo_financeiro":passivo_financeiro,"passivo_operacional":passivo_operacional,
                       "patrimonio_liquido":patrimonio_liquido,"resultado_abrangente":resultado_abrangente,"passivo_circulante":passivo_circulante,
                       "lucro_liquido":lucro_liquido,"receita_vendas":receita_vendas,"protecao_fiscal":protecao_fiscal,
-                      "res_opera_liq":rol,"res_opera_liq_cont":rol_cont}) #criar dataframe final
+                      "res_opera_liq":rol,"res_opera_liq_cont":rol_cont,"resultado_financeiro":resultado_financeiro}) #criar dataframe final
 
 final = final.sort_values(by=["cd_cvm"])
 final = final.reset_index(drop=True)
@@ -110,6 +108,11 @@ final = final[~final["cd_cvm"].isin(mismatch)] #remove mismatch
 final["fco"] = fco
 final["fco_investimento"] = fco_invest
 final["fco_financeiro"] = fco_financeiro
+print(final.columns)
+final["ativo_operacional_liq"] = final["ativo_operacional"] - final["passivo_operacional"]
+final["passivo_financeiro_liq"] = final["passivo_financeiro"] - final["ativo_financeiro"]
+final["resultado_fin_liq"] = final["resultado_financeiro"] - final["protecao_fiscal"]
+final["lucro_abrangente"] = final["resultado_abrangente"] + final["lucro_liquido"]
 print(final)
 
 #salva em arquivo csv
