@@ -40,7 +40,6 @@ passivo circulante = 2.01
 ativo operacional liquido = ativo operacional - passivo operacional\
 passivo financeiro liquido = passivo financeiro - ativo financeiro\
 resultado financeiro liquido = resultado financeiro - proteção fiscal\
-lucro abrangente = resultado abrangente + lucro liquido
 
 ## DFC_MI
 Fluxo de Caixa Operacional (FCO) = 6.01\
