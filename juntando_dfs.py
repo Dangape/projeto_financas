@@ -18,6 +18,7 @@ df_2020 = pd.read_csv("Elementos/final_2020.csv")
 # match = [x for x in df_2010["cd_cvm"].values if x in df_2011["cd_cvm"].values if x in df_2012["cd_cvm"].values if x in df_2013["cd_cvm"].values]
 frames = [df_2020,df_2019,df_2018,df_2016,df_2017,df_2015,df_2014,df_2013,df_2012,df_2011,df_2010]
 final = pd.concat(frames)
+final = final.reset_index(drop=True)
 print(final)
 
 #salvar arquivo
