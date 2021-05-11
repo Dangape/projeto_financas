@@ -21,4 +21,11 @@ final = pd.concat(frames)
 print(final)
 
 #salvar arquivo
-final.to_csv("elementos_totais.csv")
+final.to_csv("Finalizados/elementos_totais.csv")
+# create excel writer object
+writer = pd.ExcelWriter('Finalizados/elementos_totais.xlsx')
+# write dataframe to excel
+final.to_excel(writer)
+# save the excel
+writer.save()
+print('DataFrame is written successfully to Excel File.')

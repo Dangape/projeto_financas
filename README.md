@@ -6,17 +6,19 @@ Este é um projeto em andamento e ainda não está pronto para publicação ou a
 Caso queira ter acesso a base de dados utilizada, acesse este [link](http://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/), onde irá encontrar dados acerca de demonstrativos financeiros de algumas empresas brasileiras.
 
 # Arquivos
-O arquivo `corrigindo_contas.py` lê todos os dados baixados do site da CVM e verificar se cada empresa possui todas as contas necessárias. Caso não possua, o código cria a conta com valor zero
+- O arquivo `corrigindo_contas.py` lê todos os dados baixados do site da CVM e verificar se cada empresa possui todas as contas necessárias. Caso não possua, o código cria a conta com valor zero
 
-O arquvivo `data_final.py` utiliza os dados corrigidos anteriormente, e o dicionário descrito para criar os elementos necessários non dataframe final.
+- O arquvivo `data_final.py` utiliza os dados corrigidos anteriormente, e o dicionário descrito para criar os elementos necessários non dataframe final.
 
-Para conseguir ler os arquivos de contas corrigidas é necessário usar a função `pd.read_pickle`, presente no pacote `pandas` 
+- Para conseguir ler os arquivos de contas corrigidas é necessário usar a função `pd.read_pickle`, presente no pacote `pandas` 
 
-A pasta `corrected_files` possui todos os arquivos corrigidos em formato `.pkl`
+- A pasta `corrected_files` possui todos os arquivos corrigidos em formato `.pkl`
 
-A pasta `Data` possui os arquivos brutos, sem nenhum tratamento, em formato `.csv`
+- A pasta `Data` possui os arquivos brutos, sem nenhum tratamento, em formato `.csv`
 
-A pasta `Elementos`, será usada para salvar os DataFrames finais, com contas corrigidas e elementos gerados
+- A pasta `Elementos`, será usada para salvar os DataFrames finais, com contas corrigidas e elementos gerados
+
+- A pasta `Finalziados` possui os DataFrames com todos os anos e elementos criados, um em formato `.csv` e outro em formato `.xlsx`
 
 # Dicionário de Variáveis
 Nessa seção está descrito como foram filtrados os elementos de cada balanço baixado do site da CVM. Os balanços usados foram: `BPP`,`BPA`,`DFC_MI` e `DRE`. Abaixo estão demonstrados as formas de cálculos de cada elemento.
