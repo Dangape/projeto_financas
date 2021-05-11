@@ -6,9 +6,8 @@ from tqdm import tqdm
 #paths
 prefix = "Data/dfp_cia_aberta"
 # years = ["_2010","_2011","_2012","_2013","_2014","_2015","_2016","_2017","_2018","_2019","_2020"]
-years = ["_2019","_2020"]
-# filename = ["_BPA","_BPP","_DFC_MI","_DRE"]
-filename = ["_BPP"]
+years = ["_2010"]
+filename = ["_BPA","_BPP","_DFC_MI","_DRE"]
 type = "_con"
 extention = ".csv"
 
@@ -18,7 +17,6 @@ for year in years:
         file = prefix + x + type + year + extention
 
         data = pd.read_csv(str(file),sep=";",engine="python",converters={"VL_CONTA":str}, quotechar='"', error_bad_lines=False)
-        print(data)
 
         data.columns = data.columns.str.lower() #lowcase all headers
         data['dt_fim_exerc']=pd.to_datetime(data['dt_fim_exerc']) #extract year
@@ -51,7 +49,7 @@ for year in years:
         # print(len(unique_cvm))
         # print(unique_account)
 
-        for cvm in tqdm(unique_cvm):
+        for cvm in unique_cvm:
             for account in unique_account:
                 if account in data[(data["cd_cvm"]==str(cvm))].values:
                     #print("ja tem a conta",account,"na empresa",cvm)
