@@ -60,9 +60,6 @@ for year in tqdm(years):
     #patrimonio liquido
     patrimonio_liquido = data_BPP[data_BPP["cd_conta"]=="2.03"]["vl_conta"].values
 
-    #resultado abrangente
-    resultado_abrangente = data_BPP[data_BPP["cd_conta"]=="2.03.08"]["vl_conta"].values #falta subtrair do ano anterior
-
     #passivo circulante
     passivo_circulante = data_BPP[data_BPP["cd_conta"]=="2.01"]["vl_conta"].values
 
@@ -101,7 +98,7 @@ for year in tqdm(years):
     final = pd.DataFrame({"cd_cvm":ativo_total["cd_cvm"],"dt_fim_exerc":ativo_total["year"],"ativo_total":ativo_total["vl_conta"],
                           "ativo_financeiro": ativo_financeiro,"ativo_operacional":ativo_operacional,"ativo_circulante":ativo_circulante.values,
                           "passivo":passivo,"passivo_financeiro":passivo_financeiro,"passivo_operacional":passivo_operacional,
-                          "patrimonio_liquido":patrimonio_liquido,"resultado_abrangente":resultado_abrangente,"passivo_circulante":passivo_circulante,
+                          "patrimonio_liquido":patrimonio_liquido,"passivo_circulante":passivo_circulante,
                           "lucro_liquido":lucro_liquido,"receita_vendas":receita_vendas,"protecao_fiscal":protecao_fiscal,
                           "res_opera_liq":rol,"res_opera_liq_cont":rol_cont,"resultado_financeiro":resultado_financeiro}) #criar dataframe final
 
@@ -116,7 +113,6 @@ for year in tqdm(years):
     final["ativo_operacional_liq"] = final["ativo_operacional"] - final["passivo_operacional"]
     final["passivo_financeiro_liq"] = final["passivo_financeiro"] - final["ativo_financeiro"]
     final["resultado_fin_liq"] = final["resultado_financeiro"] - final["protecao_fiscal"]
-    final["lucro_abrangente"] = final["resultado_abrangente"] + final["lucro_liquido"]
 
     #salva em arquivo csv
     final.to_csv("Elementos/final_"+year+".csv", index=False)
