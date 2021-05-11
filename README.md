@@ -6,8 +6,7 @@ Este é um projeto em andamento e ainda não está pronto para publicação ou a
 Caso queira ter acesso a base de dados utilizada, acesse este [link](http://dados.cvm.gov.br/dados/CIA_ABERTA/DOC/DFP/DADOS/), onde irá encontrar dados acerca de demonstrativos financeiros de algumas empresas brasileiras.
 
 # Arquivos
-- O arquivo `corrigindo_contas.py` lê todos os dados baixados do site da CVM e verificar se cada empresa possui todas as contas necessárias. Caso não possua\
-o código cria a conta com valor zero
+- O arquivo `corrigindo_contas.py` lê todos os dados baixados do site da CVM e verificar se cada empresa possui todas as contas necessárias. Caso não possua, o código cria a conta com valor zero
 
 - O arquvivo `data_final.py` utiliza os dados corrigidos anteriormente, e o dicionário descrito para criar os elementos necessários non dataframe final.
 
@@ -54,5 +53,5 @@ Receita de vendas = 3.01\
 resultado operacional liquido (ROL) = (3.11 - 3.06) + proteção fiscal\
 ROL continuado = 3.09 - 3.06 + proteção fiscal\
 resultado financeiro = 3.06\
-proteção fiscal = resultado financeiro * 0.34 (essa aliquota muda todo ano?)\
+proteção fiscal = resultado financeiro * 0.34\
 lucro liquido = 3.11
