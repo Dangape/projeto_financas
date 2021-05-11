@@ -19,7 +19,7 @@ o código cria a conta com valor zero
 
 - A pasta `Elementos`, será usada para salvar os DataFrames finais, com contas corrigidas e elementos gerados
 
-- A pasta `Finalziados` possui os DataFrames com todos os anos e elementos criados, um em formato `.csv` e outro em formato `.xlsx`
+- O arquivo `elementos_totais.csv` é o DataFrame tratado com todos os anos e empresas, este é o dataframe que deverá ser usado para calculo de índices e testes.
 
 # Dicionário de Variáveis
 Nessa seção está descrito como foram filtrados os elementos de cada balanço baixado do site da CVM. Os balanços usados foram: `BPP`,`BPA`,`DFC_MI` e `DRE`. Abaixo estão demonstrados as formas de cálculos de cada elemento.
