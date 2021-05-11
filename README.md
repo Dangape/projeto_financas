@@ -34,7 +34,6 @@ passivo = 2 - 2.03 \
 passivo financeiro = 2.01.04 + 2.02.01\
 passivo operacional = passivo - passivo financeiro\
 patrimonio liquido = 2.03\
-resultado abrangente = 2.03.08 - 2.03.08 (ano anterior) (2010=0)\
 passivo circulante = 2.01
 
 ## Resultados
