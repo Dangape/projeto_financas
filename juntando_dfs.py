@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from tqdm import tqdm
 
 #carregando arquivos
 df_2010 = pd.read_csv("Elementos/final_2010.csv")
@@ -19,8 +20,14 @@ df_2020 = pd.read_csv("Elementos/final_2020.csv")
 frames = [df_2020,df_2019,df_2018,df_2016,df_2017,df_2015,df_2014,df_2013,df_2012,df_2011,df_2010]
 final = pd.concat(frames)
 final = final.reset_index(drop=True)
-print(final)
+print(final.columns)
+print(final.dtypes)
 
+for column in final.columns[2:]:
+  for row in range(0,len(final)):
+    if abs(final.loc[row,column]) >= 10**12:
+      final.loc[row,column] = final.loc[row,column]/10**9
+print(final)
 #salvar arquivo
 final.to_csv("Finalizados/elementos_totais.csv")
 # create excel writer object

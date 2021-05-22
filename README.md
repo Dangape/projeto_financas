@@ -1,4 +1,4 @@
-# Projeto de Finanças
+# Projeto de Finanças (Trabalho em andamento)
 Este projeto visa a criação de um artigo a respeito de utilização de dados financeiros de empresas para decisão de investimentos.\
 Este é um projeto em andamento e ainda não está pronto para publicação ou avaliação.
 
@@ -14,7 +14,7 @@ Caso queira ter acesso a base de dados utilizada, acesse este [link](http://dado
 
 - Para conseguir ler os arquivos de contas corrigidas é necessário usar a função `pd.read_pickle`, presente no pacote `pandas` 
 
-- A pasta `corrected_files` possui todos os arquivos corrigidos em formato `.pkl`
+- A pasta `corrected_files` possui todos os arquivos corrigidos em formato `.pkl`. Para ler os arquivos use a função `pd.read_pickle()` da biblioteca Pandas
 
 - A pasta `Data` possui os arquivos brutos, sem nenhum tratamento, em formato `.csv`
 
@@ -41,7 +41,7 @@ passivo circulante = 2.01
 ## Resultados
 ativo operacional liquido = ativo operacional - passivo operacional\
 passivo financeiro liquido = passivo financeiro - ativo financeiro\
-resultado financeiro liquido = resultado financeiro - proteção fiscal\
+resultado financeiro liquido = resultado financeiro - proteção fiscal
 
 ## DFC_MI
 Fluxo de Caixa Operacional (FCO) = 6.01\
@@ -55,3 +55,26 @@ ROL continuado = 3.09 - 3.06 + proteção fiscal\
 resultado financeiro = 3.06\
 proteção fiscal = resultado financeiro * 0.34\
 lucro liquido = 3.11
+
+# Dicionário de Indicadores
+
+- Liquidez corrente = ativo circulante/passivo circulante
+
+- Margem Operacional Líquida Continuada = resultado operacional líquido continuado/receita vendas
+
+- Margem Operacional Líquida = resultado operacional líquido/receita vendas
+
+- Giro do Ativo = receita vendas/ativo operacional líquido
+
+- Retorno sobre Patrimônio Líquido Ajustado = lucro abrangente/patrimônio líquido
+
+- Retorno sobre Patrimônio Líquido = lucro líquido/patrimônio líquido
+
+- Alavancagem = passivo financeiro líquido/patrimônio líquido
+
+- Retorno sobre Ativo Operacional Líquido (RAOL) = resultado operacional líquido continuado/ativo operacional líquido
+
+- Custo do Passivo Financeiro Líquido (CPFL) = resultado financeiro líquido/passivo financeiro líquido
+
+- Spread = RAOL + CPFL
+
