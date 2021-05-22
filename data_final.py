@@ -52,7 +52,7 @@ for year in tqdm(years):
     # print("Passivo:",passivo)
 
     #passivo financeiro
-    passivo_financeiro = data_BPP[data_BPP["cd_conta"]=="2.01.04"]["vl_conta"].values - data_BPP[data_BPP["cd_conta"]=="2.02.01"]["vl_conta"].values
+    passivo_financeiro = data_BPP[data_BPP["cd_conta"]=="2.01.04"]["vl_conta"].values + data_BPP[data_BPP["cd_conta"]=="2.02.01"]["vl_conta"].values
 
     #passivo operacional
     passivo_operacional = passivo - abs(passivo_financeiro) #arrumar valores negativos
@@ -79,6 +79,7 @@ for year in tqdm(years):
 
     #ROL continuado
     rol_cont = data_DRE[data_DRE["cd_conta"]=="3.09"]["vl_conta"].values - resultado_financeiro + protecao_fiscal
+
     ################################DFC_MI####################################################
     #fluxo de caixa operacional(FCO)
     fco = data_DFCMI[data_DFCMI["cd_conta"]=="6.01"]["vl_conta"].values
@@ -109,6 +110,7 @@ for year in tqdm(years):
     final["fco"] = fco
     final["fco_investimento"] = fco_invest
     final["fco_financeiro"] = fco_financeiro
+
     #colunas de resultados
     final["ativo_operacional_liq"] = final["ativo_operacional"] - final["passivo_operacional"]
     final["passivo_financeiro_liq"] = final["passivo_financeiro"] - final["ativo_financeiro"]
