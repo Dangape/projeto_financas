@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 
+pd.set_option('display.float_format', lambda x: '%.5f' % x)
 #carregando arquivos
 df_2010 = pd.read_csv("Elementos/final_2010.csv")
 df_2011 = pd.read_csv("Elementos/final_2011.csv")
@@ -27,13 +28,17 @@ for column in final.columns[2:]:
   for row in range(0,len(final)):
     if abs(final.loc[row,column]) >= 10**12:
       final.loc[row,column] = final.loc[row,column]/10**9
+
+# final = final.round(5)
 print(final)
+
+
 
 #salvar arquivo csv
 final.to_csv("Finalizados/elementos_totais.csv",index=False)
 
 # create excel writer object
-writer = pd.ExcelWriter('Finalizados/elementos_totais.xlsx')
+writer = pd.ExcelWriter('Finalizados/elementos_totais.xlsx',engine='xlsxwriter')
 # write dataframe to excel
 final.to_excel(writer)
 # save the excel

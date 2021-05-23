@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 
 #Load data
+pd.set_option('display.float_format', lambda x: '%.5f' % x)
 data = pd.read_csv("Finalizados/elementos_totais.csv")
 print(data.columns)
 print(data.head(5))
