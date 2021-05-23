@@ -66,8 +66,6 @@ lucro liquido = 3.11
 
 - Giro do Ativo = receita vendas/ativo operacional líquido
 
-- Retorno sobre Patrimônio Líquido Ajustado = lucro abrangente/patrimônio líquido
-
 - Retorno sobre Patrimônio Líquido = lucro líquido/patrimônio líquido
 
 - Alavancagem = passivo financeiro líquido/patrimônio líquido

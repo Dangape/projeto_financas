@@ -28,8 +28,10 @@ for column in final.columns[2:]:
     if abs(final.loc[row,column]) >= 10**12:
       final.loc[row,column] = final.loc[row,column]/10**9
 print(final)
-#salvar arquivo
-final.to_csv("Finalizados/elementos_totais.csv")
+
+#salvar arquivo csv
+final.to_csv("Finalizados/elementos_totais.csv",index=False)
+
 # create excel writer object
 writer = pd.ExcelWriter('Finalizados/elementos_totais.xlsx')
 # write dataframe to excel
