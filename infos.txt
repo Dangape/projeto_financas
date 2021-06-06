@@ -37,3 +37,5 @@ separar consolidado de individual
 
 python for excel livro (Felix Zunstein)
 modern environment for automation and data analysis
+
+ACCRUAL = ROL - FCO
