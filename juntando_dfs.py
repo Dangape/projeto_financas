@@ -15,6 +15,7 @@ df_2017 = pd.read_csv("Elementos/final_2017.csv")
 df_2018 = pd.read_csv("Elementos/final_2018.csv")
 df_2019 = pd.read_csv("Elementos/final_2019.csv")
 df_2020 = pd.read_csv("Elementos/final_2020.csv")
+cnpj_dict = pd.read_csv("Dicionario/cnpj_dict.csv")
 
 #checar quais empresas estão em todos os dataframes
 # match = [x for x in df_2010["cd_cvm"].values if x in df_2011["cd_cvm"].values if x in df_2012["cd_cvm"].values if x in df_2013["cd_cvm"].values]
@@ -30,9 +31,12 @@ for column in final.columns[2:]:
       final.loc[row,column] = final.loc[row,column]/10**9
 
 # final = final.round(5)
+
+#adicionando copluna de cnpj
+cnpj_dict.columns = ["cd_cvm","cnpj"]
+dicionario = dict(zip(cnpj_dict.cd_cvm,cnpj_dict.cnpj))
+final["cnpj"] = final["cd_cvm"].map(dicionario)
 print(final)
-
-
 
 #salvar arquivo csv
 final.to_csv("Finalizados/elementos_totais.csv",index=False)
