@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 from tqdm import tqdm
-import xlrd
 
 pd.set_option('display.float_format', lambda x: '%.5f' % x)
 #carregando arquivos
