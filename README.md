@@ -22,6 +22,12 @@ Caso queira ter acesso a base de dados utilizada, acesse este [link](http://dado
 
 - O arquivo `elementos_totais.csv` é o DataFrame tratado com todos os anos e empresas, este é o dataframe que deverá ser usado para calculo de índices e testes.
 
+- A pasta `Dicionario` contém dois arquivos de dicionários:
+
+	- `dicionario_b3` que contém o cnpj de todas as empresas listadas na B3
+
+	- `cnpj_dict` que contém o cnpj de todas as empresas na nossa base de dados
+
 # Dicionário de Variáveis
 Nessa seção está descrito como foram filtrados os elementos de cada balanço baixado do site da CVM. Os balanços usados foram: `BPP`,`BPA`,`DFC_MI` e `DRE`. Abaixo estão demonstrados as formas de cálculos de cada elemento.
 
@@ -75,4 +81,6 @@ lucro liquido = 3.11
 - Custo do Passivo Financeiro Líquido (CPFL) = resultado financeiro líquido/passivo financeiro líquido
 
 - Spread = RAOL + CPFL
+
+- ACCRUAL = ROL - FCO
 

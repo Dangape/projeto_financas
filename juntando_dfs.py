@@ -40,7 +40,7 @@ final.to_csv("Finalizados/elementos_totais.csv",index=False)
 # create excel writer object
 writer = pd.ExcelWriter('Finalizados/elementos_totais.xlsx',engine='xlsxwriter')
 # write dataframe to excel
-final.to_excel(writer)
+final.to_excel(writer,index=False)
 # save the excel
 writer.save()
 print('DataFrame is written successfully to Excel File.')

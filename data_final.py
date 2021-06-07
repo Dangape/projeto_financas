@@ -115,6 +115,7 @@ for year in tqdm(years):
     final["ativo_operacional_liq"] = final["ativo_operacional"] - final["passivo_operacional"]
     final["passivo_financeiro_liq"] = final["passivo_financeiro"] - final["ativo_financeiro"]
     final["resultado_fin_liq"] = final["resultado_financeiro"] - final["protecao_fiscal"]
+    final["accrual"] = final["res_opera_liq"] - final["fco"]
 
     #salva em arquivo csv
     final.to_csv("Elementos/final_"+year+".csv", index=False)
