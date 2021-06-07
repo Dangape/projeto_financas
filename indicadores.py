@@ -29,9 +29,11 @@ accrual = data.accrual
 
 cnpj = data.cnpj
 
+b3 = data.b3
+
 indices_finais = pd.DataFrame({"cd_cvm":data.cd_cvm,"dt_fim_exerc":data.dt_fim_exerc,"liquidez_corrente":lc,"margem_operacional_liquida_continuada":molc,"margem_operacional_liquida":mol,
                                "giro_ativo":ga,"retorno_patrimonio_liquido": rpl,"alavancagem":al,"retorno_ativo_oper_liq":raol,"custo_pass_fin_liq":cpfl,
-                               "spread":spread,"accrual":accrual,"cnpj":cnpj})
+                               "spread":spread,"accrual":accrual,"cnpj":cnpj,"b3":b3})
 
 indices_finais.replace([np.inf, -np.inf], int(0), inplace=True)
 print(indices_finais)
