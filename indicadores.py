@@ -25,9 +25,11 @@ cpfl = data.resultado_fin_liq/data.passivo_financeiro_liq #Custo do Passivo Fina
 
 spread = raol + cpfl #spread
 
+accrual = data.accrual
+
 indices_finais = pd.DataFrame({"cd_cvm":data.cd_cvm,"dt_fim_exerc":data.dt_fim_exerc,"liquidez_corrente":lc,"margem_operacional_liquida_continuada":molc,"margem_operacional_liquida":mol,
                                "giro_ativo":ga,"retorno_patrimonio_liquido": rpl,"alavancagem":al,"retorno_ativo_oper_liq":raol,"custo_pass_fin_liq":cpfl,
-                               "spread":spread})
+                               "spread":spread,"accrual":accrual})
 
 indices_finais.replace([np.inf, -np.inf], int(0), inplace=True)
 print(indices_finais)
@@ -38,7 +40,7 @@ indices_finais.to_csv("Finalizados/indices.csv",index=False)
 # create excel writer object
 writer = pd.ExcelWriter('Finalizados/indices.xlsx')
 # write dataframe to excel
-indices_finais.to_excel(writer)
+indices_finais.to_excel(writer,index=False)
 # save the excel
 writer.save()
 print('DataFrame is written successfully to Excel File.')
